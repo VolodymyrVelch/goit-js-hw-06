@@ -5,8 +5,8 @@ const navCategoryName = document.querySelectorAll('h2');
 const navCategoryItem = document.querySelectorAll('.item ul');
 
 const navCategoryElement = navCategories.forEach((el, index) => {
-  console.log('Category:', navCategoryName[index].textContent),
-    console.log('Elements:', navCategoryItem[index].children.length);
+  console.log('Category:', navCategoryName[index].textContent);
+  console.log('Elements:', navCategoryItem[index].children.length);
 });
 
 // Напиши скрипт, який:
