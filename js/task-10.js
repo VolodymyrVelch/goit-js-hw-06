@@ -3,16 +3,24 @@ const divBox = document.querySelector('#boxes');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 
-console.log(createBtn);
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
 
 createBtn.addEventListener('click', e => {
   let n = Number(input.value);
   return myFunction(n);
   function myFunction(n) {
     for (var i = 0; i < n; i++) {
+      let sideLength = 30 + i * 10;
       const element = document.createElement('div');
-      element.style.cssText = 'margin-top:10px; width: 40px; height: 40px; background: green;';
-      divBox.after(element);
+      element.style.marginTop = '10px';
+      element.style.background = `${getRandomHexColor()}`;
+      element.style.width = `${sideLength}px`;
+      element.style.height = `${sideLength}px`;
+      divBox.before(element);
     }
   }
 });
