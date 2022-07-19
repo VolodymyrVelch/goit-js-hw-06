@@ -3,11 +3,11 @@ const ref = {
   nameOutput: document.querySelector('#name-output'),
 };
 
-ref.nameInput.addEventListener('input', onInputChange);
-
-function onInputChange(event) {
-  ref.nameOutput.textContent = event.currentTarget.value;
-}
+ref.nameInput.addEventListener('input', event => {
+  event.currentTarget.value
+    ? (ref.nameOutput.textContent = event.currentTarget.value)
+    : (ref.nameOutput.textContent = 'Anonymous');
+});
 
 // Напиши скрипт, який під час набору тексту в інпуті input#name - input
 //     (подія input), підставляє його поточне значення в span#name - output.

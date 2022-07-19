@@ -2,12 +2,12 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 
 const navEl = document.querySelector('#ingredients');
 
-ingredients.forEach(el => {
-  const ingerdientList = document.createElement('li');
-  ingerdientList.textContent = el;
-  navEl.appendChild(ingerdientList);
+const ingerdientList = ingredients.map(el => {
+  const ingredient = document.createElement('li');
+  ingredient.textContent = el;
+  return ingredient;
 });
-console.log(navEl);
+navEl.append(...ingerdientList);
 
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 

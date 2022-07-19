@@ -29,7 +29,6 @@ const elements = images.map(el => {
 });
 
 navEl.append(...elements);
-console.log(navEl);
 
 // Використовуй масив об'єктів images для створення елементів <img>,
 //  вкладених в < li >.Для створення розмітки використовуй шаблонні рядки

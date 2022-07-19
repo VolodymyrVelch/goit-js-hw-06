@@ -10,24 +10,18 @@ function getRandomHexColor() {
 }
 
 createBtn.addEventListener('click', e => {
-  let n = Number(input.value);
-  return myFunction(n);
-  function myFunction(n) {
-    for (var i = 0; i < n; i++) {
-      let sideLength = 30 + i * 10;
-      const element = document.createElement('div');
-      element.style.marginTop = '10px';
-      element.style.background = `${getRandomHexColor()}`;
-      element.style.width = `${sideLength}px`;
-      element.style.height = `${sideLength}px`;
-      divBox.before(element);
-    }
+  for (var i = 0; i < Number(input.value); i++) {
+    let sideLength = 30 + i * 10;
+    let element = document.createElement('div');
+    element.style.marginTop = '10px';
+    element.style.background = `${getRandomHexColor()}`;
+    element.style.width = `${sideLength}px`;
+    element.style.height = `${sideLength}px`;
+    divBox.append(element);
   }
 });
-destroyBtn.addEventListener('click', event => {
-  divBox.remove();
-});
 
+destroyBtn.addEventListener('click', event => (divBox.innerHTML = ''));
 // Завдання 10
 // Напиши скрипт створення і очищення колекції елементів.
 //  Користувач вводить кількість елементів в input і натискає
