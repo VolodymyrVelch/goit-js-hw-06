@@ -16,8 +16,9 @@ const images = [
 const navEl = document.querySelector('.gallery');
 navEl.style.display = 'flex';
 navEl.style.listStyle = 'none';
+
 const elements = images.map(
-  el => `<li><img src=${el.url} alt=${el.alt} width='100' height ='100%' ><img><li>`
+  el => `<li><img src=${el.url} alt=${el.alt} width='100' height ='100%' ></img></li>`
 );
 navEl.insertAdjacentHTML('afterbegin', elements.join(''));
 
