@@ -16,19 +16,10 @@ const images = [
 const navEl = document.querySelector('.gallery');
 navEl.style.display = 'flex';
 navEl.style.listStyle = 'none';
-
-const elements = images.map(el => {
-  const navImgList = document.createElement('li');
-  navImgList.style.margin = '10px';
-
-  navImgList.insertAdjacentHTML(
-    'afterbegin',
-    `<img src=${el.url} alt=${el.alt} width='100' height ='100%'><img>`
-  );
-  return navImgList;
-});
-
-navEl.append(...elements);
+const elements = images.map(
+  el => `<li><img src=${el.url} alt=${el.alt} width='100' height ='100%' ><img><li>`
+);
+navEl.insertAdjacentHTML('afterbegin', elements.join(''));
 
 // Використовуй масив об'єктів images для створення елементів <img>,
 //  вкладених в < li >.Для створення розмітки використовуй шаблонні рядки
